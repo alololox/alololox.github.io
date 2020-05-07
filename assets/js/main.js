@@ -1,1 +1,0 @@
-$(function(){$(window).load(function(){$(".contact, .header, .body, .social").css("bottom","0")})});

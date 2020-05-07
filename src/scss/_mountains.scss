@@ -1,0 +1,116 @@
+@mixin transition {
+  @for $i from 1 through 6 {
+    svg:nth-child(#{$i}) {
+      z-index: $i;
+    }
+  }
+}
+
+@keyframes enterY {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+#landscape {
+  background: rgb(251, 231, 178);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 231, 178, 1) 0%,
+    rgba(203, 203, 203, 1) 50%
+  );
+  width: 100%;
+  min-height: 100vh;
+}
+#mountains {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-out 1s;
+  z-index: 1;
+  & > svg {
+    transition: all 0.3s ease;
+    transform: translateY(20%);
+  }
+  .ready & {
+    opacity: 1;
+  }
+  @include transition;
+  svg.mountain {
+    position: absolute;
+    transform: scale(1.1);
+    bottom: 0;
+  }
+}
+
+#initials {
+  width: 300px;
+  position: absolute;
+  bottom: 650px;
+  .circle {
+    fill: #b9ad49;
+  }
+  .signum {
+    fill: #f0e0b7;
+  }
+}
+.mountain-1 {
+  fill: #161c22;
+  fill-rule: evenodd;
+}
+.mountain-2 {
+  fill: #1d364d;
+  fill-rule: evenodd;
+}
+.mountain-3 {
+  fill: #3d6685;
+  fill-rule: evenodd;
+}
+.mountain-4 {
+  fill: #6a8aa4;
+  fill-rule: evenodd;
+}
+
+.mountain-5 {
+  fill: #96aec2;
+  fill-rule: evenodd;
+}
+
+@media (max-height: 1300px) {
+  .mountain {
+    width: 1500px;
+  }
+  #initials {
+    bottom: 500px;
+  }
+}
+
+@media (max-height: 1150px) {
+  .mountain {
+    width: 1200px;
+  }
+  #initials {
+    bottom: 400px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ready #mountains {
+    opacity: 0.8;
+  }
+}
