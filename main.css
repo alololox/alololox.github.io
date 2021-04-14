@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:wght@100;400&display=swap");
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ededed;
+    --text: #000000;
+    --accent1: #009e77;
+    --accent2: #562389;
+    --accent3: #002799;
+    --accent4: #036798;
+    --accent5: #54620d;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1b1b;
+    --text: #d0d0d0;
+    --accent1: #ff6188;
+    --accent2: #a9dc76;
+    --accent3: #ffd866;
+    --accent4: #fc9867;
+    --accent5: #ab9df2;
+  }
+}
+html {
+  font-family: "Roboto Mono", monospace, ui-monospace;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media screen and (max-width: 1020px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+html.dark body {
+  color: #fff;
+}
+a {
+  color: var(--dark-red);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  color: var(--dark-green);
+  text-decoration: none;
+}
+p {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-top: 2rem;
+  letter-spacing: -0.1rem;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-family: "Playfair Display", "Georgia", serif;
+  letter-spacing: 0rem;
+  font-size: 5.5rem;
+  line-height: 5rem;
+  margin: 0;
+}
+
+.accent1 {
+  color: var(--accent1);
+}
+.accent2 {
+  color: var(--accent2);
+}
+.accent3 {
+  color: var(--accent3);
+}
+.accent4 {
+  color: var(--accent4);
+}
+.accent5 {
+  color: var(--accent5);
+}
+
+article {
+  width: 100%;
+  max-width: 65ch;
+  margin: 4em auto;
+  padding: 0 1em;
+}
