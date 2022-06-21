@@ -43,12 +43,16 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: -moz-available;
+  height: -webkit-fill-available;
 }
 
 body {
   margin: 0;
   background-color: var(--bg);
   color: var(--text);
+  width: -moz-available;
+  height: -webkit-fill-available;
 }
 .dark body {
   color: #fff;
@@ -85,6 +89,14 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+main {
+  display: flex;
+  width: -moz-available;
+  height: -webkit-fill-available;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 article {
